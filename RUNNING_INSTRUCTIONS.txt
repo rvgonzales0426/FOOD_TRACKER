@@ -1,0 +1,33 @@
+# How to Run the Food Tracker Django Project
+
+## Run the development server locally
+
+Open your terminal and run the following command in the project root directory:
+
+```
+python manage.py runserver
+```
+
+This will start the Django development server on the default address and port:
+
+http://127.0.0.1:8000/
+
+Open this URL in your web browser to access the running application.
+
+---
+
+## If deployed on Vercel
+
+After deployment, your live app will be accessible at the URL provided by Vercel, for example:
+
+https://your-vercel-project-url.vercel.app/
+
+
+Replace `your-vercel-project-url` with your actual Vercel project domain.
+
+---
+
+## Notes
+
+- To stop the local server, press `Ctrl+C` in the terminal.
+- Make sure you have all dependencies installed and environment variables set before running.

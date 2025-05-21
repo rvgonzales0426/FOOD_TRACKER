@@ -18,20 +18,21 @@ QUANTITY_UNIT_CHOICES = [
     ('ml', 'Milliliters'),
 ]
 
-class FoodItem(models.Model):
+class DonationCenter(models.Model):
     name = models.CharField(max_length=100)
-    quantity = models.PositiveIntegerField()
-    quantity_unit = models.CharField(max_length=20, choices=QUANTITY_UNIT_CHOICES, default='pcs')
-    is_surplus = models.BooleanField(default=True)
-    category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
-    created_at = models.DateTimeField(auto_now_add=True)
+    location = models.CharField(max_length=200)
 
     def __str__(self):
         return self.name
 
-class DonationCenter(models.Model):
+class FoodItem(models.Model):
     name = models.CharField(max_length=100)
-    location = models.CharField(max_length=200)
+    quantity = models.PositiveIntegerField()
+    quantity_unit = models.CharField(max_length=20, choices=QUANTITY_UNIT_CHOICES, default='pcs')
+    category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
+    is_surplus = models.BooleanField(default=False)
+    donation_center = models.ForeignKey(DonationCenter, on_delete=models.SET_NULL, null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name

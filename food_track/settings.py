@@ -76,11 +76,11 @@ WSGI_APPLICATION = 'food_track.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'food_db',        # <-- from "dbname" in the connection string
-        'USER': 'postgres',       # <-- from "user" in the connection string
-        'PASSWORD': '1234',  # <-- replace with your actual PostgreSQL password
+        'NAME': 'food_db',        
+        'USER': 'postgres',      
+        'PASSWORD': '1234',  
         'HOST': 'localhost',
-        'PORT': '5433',           # <-- different from the default (5432), so make sure it's 5433
+        'PORT': '5433',           
     }
 }
 
@@ -127,3 +127,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Authentication settings
+LOGIN_URL = 'landing'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'landing'

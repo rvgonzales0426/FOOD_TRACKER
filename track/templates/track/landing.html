@@ -1,0 +1,22 @@
+{% extends "track/base.html" %}
+{% block title %}Welcome - Food Tracker{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 text-center">
+      <h1 class="display-4 mb-4">Welcome to Food Tracker</h1>
+      <p class="lead mb-5">Track and manage food donations efficiently with our modern platform.</p>
+      
+      <div class="d-grid gap-3 d-md-flex justify-content-md-center">
+        <a href="{% url 'login' %}" class="btn btn-primary btn-lg px-4">
+          <i class="bi bi-box-arrow-in-right me-2"></i>Login
+        </a>
+        <a href="{% url 'register' %}" class="btn btn-outline-secondary btn-lg px-4">
+          <i class="bi bi-person-plus me-2"></i>Register
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

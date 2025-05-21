@@ -1,0 +1,21 @@
+{% extends "track/base.html" %} {% block title %}Confirm Pickup - Food Tracker 
+{% endblock %} {% block content %}
+<h2>Confirm Pickup</h2>
+<p>Food Item: {{ food_item.name }}</p>
+<p>Quantity: {{ food_item.quantity }} {{ food_item.quantity_unit }}</p>
+<p>Category: {{ food_item.category }}</p>
+{% if food_item.donation_center %}
+<p>
+  Pickup Location: {{ food_item.donation_center.name }} 
+  - {{ food_item.donation_center.location }}
+
+</p>
+{% else %}
+<p>No donation center assigned.</p>
+{% endif %}
+<form method="post">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-success">Confirm Pickup</button>
+  <a href="{% url 'home' %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
